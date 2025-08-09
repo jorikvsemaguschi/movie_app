@@ -68,3 +68,47 @@ flutter_*.png
 # Environment files
 .env
 .env.*
+
+# Compiled binaries (Windows, Linux, macOS, Android, iOS, Web)
+*.exe
+*.dll
+*.so
+*.dylib
+*.apk
+*.aab
+*.ipa
+*.app
+*.xcarchive
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.zip
+*.tar
+*.tar.gz
+*.deb
+*.rpm
+*.snap
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Log files
+*.log
+
+# Flutter/IDE metadata
+.metadata
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Gradle
+.gradle/
+
+# Coverage
+coverage/
+
+# History (optional)
+.history/
