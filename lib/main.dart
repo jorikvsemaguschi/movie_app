@@ -15,6 +15,7 @@ import 'domain/usecases/get_movies.dart';
 import 'presentation/bloc/movie_list_bloc.dart';
 import 'presentation/pages/movie_list_page.dart';
 
+/// Точка входа в приложение. Инициализирует зависимости и запускает приложение.
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
   final GetMovies getMovies;
   const MyApp({Key? key, required this.getMovies}) : super(key: key);
 
+  /// Строит корневой виджет приложения.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

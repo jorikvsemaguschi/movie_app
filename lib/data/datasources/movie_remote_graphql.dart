@@ -7,6 +7,7 @@ class MovieRemoteGraphQLDatasource {
 
   MovieRemoteGraphQLDatasource({required this.client});
 
+  /// Получает список фильмов из SWAPI GraphQL API.
   Future<List<MovieDto>> fetchMovies() async {
     logger.i('GraphQL: Fetching movies (SWAPI)...');
     const query = r'''

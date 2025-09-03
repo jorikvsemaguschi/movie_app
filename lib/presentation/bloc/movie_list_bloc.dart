@@ -11,6 +11,7 @@ class MovieListBloc extends Bloc<MovieListEvent, MovieListState> {
     on<LoadMovies>(_onLoadMovies);
   }
 
+  /// Обрабатывает событие загрузки фильмов.
   Future<void> _onLoadMovies(LoadMovies event, Emitter<MovieListState> emit) async {
     emit(MovieListLoading());
     try {

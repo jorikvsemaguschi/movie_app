@@ -5,6 +5,7 @@ class MovieItem extends StatelessWidget {
   final Movie movie;
   const MovieItem({Key? key, required this.movie}) : super(key: key);
 
+  /// Строит виджет карточки фильма.
   @override
   Widget build(BuildContext context) {
     return Card(

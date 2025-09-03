@@ -8,6 +8,7 @@ class MovieRemoteRestDatasource {
 
   MovieRemoteRestDatasource({required this.dio, required this.apiKey});
 
+  /// Получает список популярных фильмов из TMDB REST API.
   Future<List<MovieDto>> fetchMovies() async {
     logger.i('REST: Fetching movies...');
     final response = await dio.get(

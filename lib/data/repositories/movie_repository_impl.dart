@@ -17,6 +17,7 @@ class MovieRepositoryImpl implements IMovieRepository {
     required this.cacheDatasource,
   });
 
+  /// Получает список фильмов из кэша или из выбранного источника (REST/GraphQL).
   @override
   Future<List<Movie>> getMovies({bool forceRefresh = false, SourceType source = SourceType.rest}) async {
     try {

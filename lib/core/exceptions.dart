@@ -1,3 +1,4 @@
+/// Исключение, возникающее при ошибке сервера.
 class ServerException implements Exception {
   final String message;
   ServerException(this.message);
@@ -5,6 +6,7 @@ class ServerException implements Exception {
   String toString() => 'ServerException: $message';
 }
 
+/// Исключение, возникающее при ошибке кэша.
 class CacheException implements Exception {
   final String message;
   CacheException(this.message);

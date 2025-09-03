@@ -5,6 +5,7 @@ class GetMovies {
   final IMovieRepository repository;
   GetMovies(this.repository);
 
+  /// Получает список фильмов через репозиторий.
   Future<List<Movie>> call({
     bool forceRefresh = false,
     SourceType source = SourceType.rest,

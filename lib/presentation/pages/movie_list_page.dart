@@ -16,6 +16,7 @@ class MovieListPage extends StatefulWidget {
 class _MovieListPageState extends State<MovieListPage> {
   SourceType _source = SourceType.rest;
 
+  /// Инициализация состояния. Загружает фильмы после первого рендера.
   @override
   void initState() {
     super.initState();
@@ -24,6 +25,7 @@ class _MovieListPageState extends State<MovieListPage> {
     });
   }
 
+  /// Строит экран списка фильмов.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +55,7 @@ class _MovieListPageState extends State<MovieListPage> {
               return const Center(child: CircularProgressIndicator());
             } else if (state is MovieListLoaded) {
               if (state.movies.isEmpty) {
-                return const Center(child: Text('No movies found'));
+                return const Center(child: Text('Фильмы не найдены'));
               }
               return ListView.builder(
                 physics: const AlwaysScrollableScrollPhysics(),
@@ -61,14 +63,14 @@ class _MovieListPageState extends State<MovieListPage> {
                 itemBuilder: (context, index) => MovieItem(movie: state.movies[index]),
               );
             } else if (state is MovieListError) {
-              return Center(child: Text('Error: ${state.message}'));
+              return Center(child: Text('Ошибка: ${state.message}'));
             }
             return Center(
               child: ElevatedButton(
                 onPressed: () {
                   context.read<MovieListBloc>().add(LoadMovies(source: _source));
                 },
-                child: const Text('Load movies'),
+                child: const Text('Загрузить фильмы'),
               ),
             );
           },
